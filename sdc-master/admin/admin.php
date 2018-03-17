@@ -33,6 +33,7 @@
         <h1 class="display-4 text-center">Admin Home</h1>
         <p class="lead wrap-user-buttons">
 	        <a href="./show_instance_data.php"><button class="btn btn-primary">Show Instance Data</button></a>
+		<a href="./show_inactive_instances.php"><button class="btn btn-primary">Show Inactive Instances</button></a>
         </p>';
 			}
 
