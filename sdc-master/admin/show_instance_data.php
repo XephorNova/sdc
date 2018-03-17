@@ -70,7 +70,7 @@
 		} 
 		else if($accept == 'false') {
 			//INSERT the record into Inactive_log_data if Request is declined!!!
-			$query = "INSERT INTO Inactive_log_data (user_name, instance_id) VALUES ($user_name, '$instance_id',$flavor_name,$image_name)";
+			$query = "$query = "SELECT(user_name, instance_id)*FROM instance_data INSERT INTO Inactive_log_data (user_name, instance_id,flavorName,instanceName) VALUES ($user_name, $instance_id,$flavorName,$instanceName)";
 			if(!mysqli_query($connec, $query))
 			{
 				echo "Error to insert" . mysqli_error($connec);
