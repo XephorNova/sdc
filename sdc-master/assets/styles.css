@@ -1,0 +1,31 @@
+html, body {
+	background: #fcf9ec;
+}
+
+.navbar {
+	background: rgba(136, 0, 21, 1) !important;
+	height: 80px;
+}
+
+.navbar a {
+	color: #fff !important;
+}
+
+nav .logo {
+	width: 50px;
+	height: 50px;
+}
+
+nav .brand-title {
+	display: inline-block;
+	margin-top: 10px !important;
+}
+
+.wrap-user-buttons {
+	text-align: center;
+}
+
+.wrap-user-buttons a button {
+	background: rgba(136, 0, 21, 1) !important;
+	border: none;
+}
