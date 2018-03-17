@@ -73,9 +73,9 @@
 			$query = "INSERT INTO Inactive_log_data (user_name, instance_id) VALUES ($user_name, '$instance_id',$flavor_name,$image_name)";
 			if(!mysqli_query($connec, $query))
 			{
-				echo "Error on deletion" . mysqli_error($connec);
+				echo "Error to insert" . mysqli_error($connec);
 				$output = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-	                      <strong>Error</strong>
+	                      <strong>ERROR!!!</strong>
 	                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 	                        <span aria-hidden="true">&times;</span>
 	                      </button>
@@ -83,7 +83,7 @@
             } 
 			else {
             	$output = '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                  <strong>Instance removed and not created.</strong>
+                  <strong>Instance deactivated and not created.</strong>
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
