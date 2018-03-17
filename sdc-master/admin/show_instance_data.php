@@ -67,10 +67,12 @@
                     			   </div>';
             			}
 			//}
-		} else if($accept == 'false') {
-			//Delete the record if DELETE button clicked
-			$query = "DELETE FROM instance_data WHERE instance_name=$instance_name";
-			if(!mysqli_query($connec, $query)) {
+		} 
+		else if($accept == 'false') {
+			//INSERT the record into Inactive_log_data if Request is declined!!!
+			$query = "INSERT INTO Inactive_log_data (user_name, instance_id) VALUES ($user_name, '$instance_id',$flavor_name,$image_name)";
+			if(!mysqli_query($connec, $query))
+			{
 				echo "Error on deletion" . mysqli_error($connec);
 				$output = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 	                      <strong>Error</strong>
@@ -78,7 +80,8 @@
 	                        <span aria-hidden="true">&times;</span>
 	                      </button>
 	                    </div>';
-            } else {
+            } 
+			else {
             	$output = '<div class="alert alert-success alert-dismissible fade show" role="alert">
                   <strong>Instance removed and not created.</strong>
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -97,7 +100,8 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
         <?php 
-            if(isset($_SESSION['admin_id'])) {
+            if(isset($_SESSION['admin_id']))
+	    {
             echo '
             	<li class="nav-item">
                	 <a class="nav-link" href="./admin.php">Home</a>
